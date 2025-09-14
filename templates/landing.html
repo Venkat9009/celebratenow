@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrate Now Pvt Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cursor blink */
+        .typing::after {
+            content: "|";
+            animation: blink 1s infinite;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Base */
+        html,
+        body {
+            height: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+
+        /* Alternate backgrounds */
+        #about {
+            background: #fff;
+            color: #111;
+        }
+
+        #services {
+            background: #000;
+            color: #fff;
+        }
+
+        #why {
+            background: #fff;
+            color: #111;
+        }
+
+        #contact {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Make "For More Information" heading smaller */
+        #contact h2 {
+            font-size: clamp(2rem, 4vw, 3rem) !important;
+            font-weight: 800;
+        }
+
+
+        h2 {
+            font-size: clamp(5rem, 7vw, 6rem) !important;
+            font-weight: 900 !important;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+
+        /* About text */
+        #about p {
+            font-size: 1.25rem;
+            line-height: 1.9rem;
+            color: #333;
+        }
+
+        /* Contact labels */
+        #contact strong {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-lg border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+            <h1 class="text-2xl font-extrabold tracking-wide">Celebrate Now</h1>
+            <nav class="space-x-6 text-gray-300 font-medium">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#why" class="hover:text-white transition">Why Us</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="h-screen bg-black text-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div class="flex justify-center">
+                <img src="{{ url_for('static', filename='logo1.png') }}" alt="Celebrate Now Logo"
+                    class="w-72 md:w-[350px] lg:w-[400px]">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 id="typing" class="typing text-5xl font-extrabold"></h1>
+                <p class="mt-6 text-2xl text-gray-300">One Platform, Endless Celebrations</p>
+
+                <!-- Buttons -->
+                <div class="mt-10 space-x-4">
+                    <a href="#services"
+                        class="inline-block border border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-black transition">
+                        Explore Services
+                    </a>
+                    <a href="{{ url_for('vendor_portal') }}"
+                        class="inline-block border border-pink-500 text-pink-500 font-semibold px-8 py-4 rounded-lg hover:bg-pink-500 hover:text-white transition">
+                        Pre-Register with Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section id="about" class="fade-in text-center">
+        <div class="max-w-5xl mx-auto">
+            <h2>Who We Are</h2>
+            <p class="mt-8 leading-relaxed">
+                Celebrate Now is an event-tech platform that makes planning celebrations simple, joyful, and
+                stress-free. From birthdays to weddings and corporate events, we connect people with trusted vendors,
+                creative ideas, and reliable support. Our mission is to bring more happiness into every celebration by
+                combining technology with a human touch.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="fade-in text-center">
+        <div class="max-w-6xl mx-auto">
+            <h2>Our Services</h2>
+            <div class="mt-10 text-left space-y-6 leading-relaxed">
+                <p>1. Celebrate Now connects you with customers who are actively planning celebrations.</p>
+                <p>2. We bring you qualified leads for birthdays, weddings, and corporate events.</p>
+                <p>3. Our platform increases your visibility among people searching for trusted vendors.</p>
+                <p>4. We showcase your services to the right audience at the right time.</p>
+                <p>5. With Celebrate Now, you don’t chase customers—we bring them to you.</p>
+                <p>6. Every celebration is an opportunity for vendors like you to grow your business.</p>
+                <p>7. We believe in long-term partnerships built on trust and mutual success.</p>
+                <p>8. Vendors are the heart of every celebration, and we ensure you get the recognition you deserve.</p>
+                <p>9. Celebrate Now is more than a platform—it’s a growth partner for your business.</p>
+                <p>10. Together, we create joyful moments for customers and consistent opportunities for vendors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why" class="fade-in text-center">
+        <div class="max-w-6xl mx-auto">
+            <h2>Why Choose Us</h2>
+            <div class="mt-10 text-left space-y-6 leading-relaxed">
+                <p><strong>More Customers, Less Effort:</strong> Qualified leads for birthdays, weddings, and corporate
+                    events.</p>
+                <p><strong>Consistent Business Growth:</strong> Regular opportunities to grow your bookings and revenue.
+                </p>
+                <p><strong>Increased Visibility:</strong> Services showcased to people actively searching for vendors.
+                </p>
+                <p><strong>No Extra Marketing Cost:</strong> You deliver great service, we handle customer reach.</p>
+                <p><strong>Easy-to-Use Platform:</strong> Manage leads, inquiries, and bookings with simple tools.</p>
+                <p><strong>Trusted Partnerships:</strong> Built on fairness and transparency.</p>
+                <p><strong>Recognition & Credibility:</strong> Vendors highlighted as verified, reliable partners.</p>
+                <p><strong>Mutual Success:</strong> When you grow, we grow — our success is linked with yours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2>For More Information</h2>
+            <p class="mt-4 text-lg text-gray-400">Contact Us:</p>
+            <div class="mt-10 text-left md:text-center space-y-4 leading-relaxed">
+                <p><strong>PHONE:</strong> 9618936984, 8106931172</p>
+                <p><strong>MAIL:</strong> celebratenowpvtltd@gmail.com</p>
+                <p><strong>SITE:</strong> <a href="https://celebratenow.in"
+                        class="underline hover:text-gray-400">celebratenow.in</a></p>
+                <p><strong>ADDRESS:</strong> KPHB COLONY, HYDERABAD, TELANGANA - 500072</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 text-gray-500 text-center py-6">
+        <p>&copy; 2025 Celebrate Now Pvt Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Typing + Fade JS -->
+    <script>
+        const texts = ["Celebrate Now Pvt Ltd", "Endless Celebrations"];
+        const typingElement = document.getElementById("typing");
+        let textIndex = 0, charIndex = 0, isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            typingElement.textContent = isDeleting
+                ? currentText.substring(0, charIndex--)
+                : currentText.substring(0, charIndex + 1), charIndex++;
+
+            let speed = isDeleting ? 80 : 150;
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true; setTimeout(type, 1500); return;
+            }
+            if (isDeleting && charIndex < 0) {
+                isDeleting = false; textIndex = (textIndex + 1) % texts.length; charIndex = 0;
+                setTimeout(type, 500); return;
+            }
+            setTimeout(type, speed);
+        }
+        window.onload = type;
+
+        // Fade-in scroll (forward + reverse)
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                entry.isIntersecting
+                    ? entry.target.classList.add('visible')
+                    : entry.target.classList.remove('visible');
+            });
+        }, { threshold: 0.2 });
+        faders.forEach(fade => observer.observe(fade));
+    </script>
+</body>
+
+</html>
